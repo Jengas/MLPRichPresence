@@ -1,0 +1,55 @@
+{
+  "name": "EquestriaSpaceRPC",
+  "version": "0.0.2",
+  "description": "Discord RPC program that allows you to be in Equestria!",
+  "main": "main.js",
+  "author": "Jengas",
+  "license": "MIT",
+  "homepage": "https://github.com/jengas/MLPRichPresence",
+  "bugs": {
+    "url": "https://github.com/jengas/MLPRichPresence/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jengas/MLPRichPresence.git"
+  },
+  "scripts": {
+    "start": "electron main.js",
+    "exe": "electron-packager . --platform=win32 --arch=x64 EquestriaSpaceRPC --icon=assets/img/icon.ico --asar=true --overwrite",
+    "build": "electron-packager . --platform=win32 --arch=x64 EquestriaSpaceRPC --icon=assets/img/icon.ico --asar=true --overwrite && node build.js"
+  },
+  "dependencies": {
+    "@dnode/parse-duration": "^1.4.2",
+    "auto-launch": "^5.0.5",
+    "bluebird": "^3.5.1",
+    "discord-rpc": "github:devsnek/discord-rpc",
+    "electron-json-storage": "^4.1.1",
+    "jquery": "^3.3.1",
+    "moment": "^2.19.2",
+    "open": "0.0.5",
+    "osascript-promise": "^1.0.0",
+    "parse-duration": "^0.1.1",
+    "prism-media": "github:justJS/prism-media#patch-1",
+    "snekfetch": "^3.5.8",
+    "update-electron-app": "^1.3.0"
+  },
+  "browser": {
+    "net": false,
+    "ws": false,
+    "uws": false,
+    "erlpack": false,
+    "src/transports/IPC.js": false
+  },
+  "devDependencies": {
+    "electron": "^2.0.7",
+    "electron-winstaller": "^2.6.4"
+  },
+  "electronWinstallerConfig": {
+    "name": "Equestria Space",
+    "setupExe": "EquestriaSpace.exe",
+    "description": "Equestria Space RPC",
+    "loadingGif": "loading.gif",
+    "setupIcon": "icon.ico",
+    "noMsi": true
+  }
+}

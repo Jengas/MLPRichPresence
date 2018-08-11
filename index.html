@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Rich Presence</title>
+  <meta charset="UTF-8">
+  <script type="text/javascript">
+    window.$ = window.jQuery = require('jquery');
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body onselectstart='return false;'>
+
+  <div id="title-bar">
+    <div id="title">EQUESTRIA SPACE</div>
+    <div id="title-bar-btns">
+      <button id="min-btn"><svg name="min-btn" width="12" height="12" viewBox="0 0 12 12"><rect fill="#ffffff" width="10" height="1" x="1" y="6"></rect></svg></button>
+      <button id="close-btn"><svg name="close-btn" width="12" height="12" viewBox="0 0 12 12"><polygon fill="#ffffff" fill-rule="evenodd" points="11 1.576 6.583 6 11 10.424 10.424 11 6 6.583 1.576 11 1 10.424 5.417 6 1 1.576 1.576 1 6 5.417 10.424 1"></polygon></svg></button>
+    </div>
+  </div>
+
+  <div id="emoji">
+    🚀
+  </div>
+
+  <div class="center low">
+    <h1>EQUESTRIA SPACE</h2>
+      <h6>Пони это космос!</h6>
+    <br><br><br>
+
+    <h2>Выберите город</h2>
+    <div class="dropdown">
+      <p class="selected"><span id="state"></span></p>
+      <ul class="dropdown-list" id="dplist">
+      </ul>
+    </div>
+
+    <h2>Что ваш персонаж делает?</h2>
+    <div class="container">
+      <form id="disabledform">
+        <div class="group">
+          <input id="details" type="text" required></input>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Введите ваше действие</label>
+        </div>
+      </form>
+    </div>
+
+  <h2 style="display:none" id="lkey"></h2>
+  <h2 style="display:none" id="ltext"></h2>
+
+  </div>
+  <div style="display:flex;justify-content:center;align-items:center">
+    <div class="sf-checkbox" style="display:none">
+       <label>
+         <input type="checkbox" id="checkbox">
+         <span class="checkbox-material"><span class="check"></span></span> Автозапуск
+       </label>
+     </div>
+  <div class="footer">
+    <a class="button space" onclick="save()">Сохранить</a>
+  </div>
+  </div>
+  <script src="assets/js/system.js"></script>
+  <script src="renderer.js"></script>
+</body>
+
+</html>

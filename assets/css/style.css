@@ -1,0 +1,598 @@
+body, html {
+  margin: 0px;
+  height: 100%;
+  cursor: default;
+  font-family: sans-serif;
+  background: #222 !important;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+  /* make scrollbar transparent */
+}
+
+#emoji {
+  /*height: 60%;*/
+  display: grid;
+  font-size: 400%;
+  margin: auto;
+  text-align: center;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.center, h2 {
+  text-align: center;
+}
+
+a {
+  text-align: center;
+  text-decoration: underline
+}
+
+h6 {
+  margin-top: 20px !important;
+  margin-bottom: -17px !important
+}
+
+.low {
+  margin-top: -10px !important
+}
+
+h1, h2, h3, h4, h5, h6 {
+  -webkit-app-region: no-drag;
+  color: white
+}
+
+h6 {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.table>.item {
+  width: 50% !important;
+  float: left;
+}
+
+.dropdown {
+  position: relative;
+  width: 235px;
+  background: #ccc;
+  display: block;
+  margin: 10px auto;
+  z-index: 500;
+  border-radius: 3px;
+}
+
+.dropdown .selected {
+  display: block;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.dropdown .selected i {
+  position: absolute;
+  right: 0.5rem;
+}
+
+.dropdown .selected:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+}
+
+.dropdown .dropdown-list {
+  position: absolute;
+  z-index: 500;
+  top: 0;
+  width: 100%;
+  max-height: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background: #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+  opacity: 0;
+  visibility: hidden;
+  overflow: scroll;
+  transform: translateY(0%);
+  transition: all 0.3s cubic-bezier(0.17, 0.67, 0, 1);
+  border-radius: 3px;
+}
+
+.dropdown .dropdown-list li {
+  padding: 1rem;
+  display: block;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.dropdown .dropdown-list li:hover, .dropdown .dropdown-list li.active {
+  background: rgba(63, 81, 181, 0.1);
+}
+
+.dropdown .dropdown-list.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0%);
+  max-height: 260px;
+  overflow: auto;
+}
+
+#close-btn:hover {
+  background-color: #C0392B !important;
+  transition: background-color 0.2s;
+}
+
+#close-btn {
+  transition: all 0.2s;
+}
+
+#min-btn {
+  transition: all 0.2s;
+}
+
+#min-btn:hover {
+  transition: all 0.2s;
+}
+
+#title-bar {
+  -webkit-app-region: drag;
+  height: 32px;
+  padding: 0px;
+  margin: 0px;
+  color: #ADADAD;
+  font-family: sans-serif;
+}
+
+#title {
+  position: fixed;
+  top: 0px;
+  left: 12px;
+  line-height: 32px;
+  font-size: 14px;
+}
+
+#title-bar-btns {
+  -webkit-app-region: no-drag;
+  position: fixed;
+  top: 1px;
+  right: 0px;
+}
+
+#title-bar-btns button {
+  height: 32px;
+  width: 32px;
+  background-color: transparent;
+  border: none;
+  color: #F1F1F1;
+  font-size: 16px;
+}
+
+#title-bar-btns button:hover {
+  background-color: #2C2F33;
+}
+
+#content {
+  padding: 12px;
+  color: #CCCCCC;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+/* form starting stylings ------------------------------- */
+
+.group {
+  position: relative;
+  margin-bottom: 3em;
+}
+
+input {
+  font-size: 18px;
+  padding: 0.625em 0.625em 0.625em 0.3125em;
+  display: block;
+  border: none;
+  text-align: center;
+  border-bottom: 1px solid #757575;
+  background-color: transparent;
+  color: #fff;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* LABEL ======================================= */
+
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 20px;
+  top: 0.625em;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+
+input:focus~label, input:valid~label {
+  top: -20px;
+  left: 40px;
+  display: none;
+  font-size: 14px;
+  color: #eee;
+}
+
+/* BOTTOM BARS ================================= */
+
+.bar {
+  position: relative;
+  display: block;
+}
+
+.bar:before, .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #eee;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+
+input:focus~.bar:before, input:focus~.bar:after {
+  width: 50%;
+}
+
+.button {
+  display: inline-block;
+  margin: 0.3em;
+  padding: 1.2em 5em;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 3px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  border: none;
+  font-size: 15px;
+  text-align: center;
+}
+
+.button:hover {
+  box-shadow: 1px 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.space {
+  background-color: #ccc;
+  color: #000;
+}
+
+.space_save {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.ripple {
+  position: absolute;
+  background: rgba(0, 0, 0, .25);
+  border-radius: 100%;
+  transform: scale(0.2);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-animation: ripple .75s ease-out;
+  -moz-animation: ripple .75s ease-out;
+  animation: ripple .75s ease-out;
+}
+
+@-webkit-keyframes ripple {
+  from {
+    opacity: 1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes ripple {
+  from {
+    opacity: 1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  margin-bottom: -150px;
+  transition: all 0.5s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55)
+}
+
+.enabled {
+  margin-bottom: 15px !important;
+}
+
+.sf-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  margin-bottom: 80px;
+}
+
+.sf-checkbox label {
+  cursor: pointer;
+  position: relative !important;
+  left: 0;
+  pointer-events: unset;
+}
+
+.sf-checkbox input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  left: 0;
+  pointer-events: none;
+}
+
+.sf-checkbox .checkbox-material {
+  vertical-align: middle;
+  position: relative;
+  top: 3px;
+}
+
+.sf-checkbox .checkbox-material:before {
+  position: absolute;
+  left: 8px;
+  top: 2px;
+  content: "";
+  background-color: #2196f3;
+  height: 4px;
+  width: 4px;
+  border-radius: 100%;
+  z-index: 1;
+  opacity: 0;
+  margin: 0;
+}
+
+.sf-checkbox .checkbox-material .check {
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.sf-checkbox .checkbox-material .check:before {
+  position: absolute;
+  content: "";
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  display: block;
+  margin-top: -4px;
+  margin-left: 6px;
+  width: 0;
+  height: 0;
+  -webkit-box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0 inset;
+  box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0 inset;
+  -webkit-animation: checkbox-off 0.3s forwards ease-out;
+  animation: checkbox-off 0.3s forwards ease-out;
+}
+
+.sf-checkbox input[type="checkbox"]:focus+.checkbox-material .check:after {
+  opacity: 0.2;
+}
+
+.sf-checkbox input[type="checkbox"]:checked+.checkbox-material .check:before {
+  -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+  box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+  -webkit-animation: checkbox-on 0.3s forwards ease-out;
+  animation: checkbox-on 0.3s forwards ease-out;
+}
+
+.checkbox input[type="checkbox"]:not(:checked)+.checkbox-material:before {
+  -webkit-animation: rippleOff 700ms forwards ease-out;
+  animation: rippleOff 700ms forwards ease-out;
+}
+
+.sf-checkbox input[type="checkbox"]:checked+.checkbox-material:before {
+  -webkit-animation: rippleOn 700ms forwards ease-out;
+  animation: rippleOn 700ms forwards ease-out;
+}
+
+.sf-checkbox input[type="checkbox"]:not(:checked)+.checkbox-material .check:after {
+  -webkit-animation: rippleOff 700ms forwards ease-out;
+  animation: rippleOff 700ms forwards ease-out;
+}
+
+.sf-checkbox input[type="checkbox"]:checked+.checkbox-material .check:after {
+  -webkit-animation: rippleOn 700ms forwards ease-out;
+  animation: rippleOn 700ms forwards ease-out;
+}
+
+.sf-checkbox input[type="checkbox"][disabled]:not(:checked)~.checkbox-material .check:before, .sf-checkbox input[type="checkbox"][disabled]+.circle {
+  opacity: 0.5;
+}
+
+.sf-checkbox input[type="checkbox"][disabled]+.checkbox-material .check:after {
+  background-color: #2196f3;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+@-webkit-keyframes checkbox-on {
+  0% {
+    -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
+  }
+  50% {
+    -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+  }
+}
+
+@keyframes checkbox-on {
+  0% {
+    -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
+  }
+  50% {
+    -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+  }
+}
+
+@-webkit-keyframes checkbox-off {
+  0% {
+    -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+  }
+  25% {
+    -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+  }
+  50% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-top: -4px;
+    margin-left: 6px;
+    width: 0px;
+    height: 0px;
+    -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px, 0 0 0 0 inset;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px, 0 0 0 0 inset;
+  }
+  51% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    margin-top: -2px;
+    margin-left: -2px;
+    width: 20px;
+    height: 20px;
+    -webkit-box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 10px inset;
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 10px inset;
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    margin-top: -2px;
+    margin-left: -2px;
+    width: 20px;
+    height: 20px;
+    -webkit-box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 0px inset;
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 0px inset;
+  }
+}
+
+@keyframes checkbox-off {
+  0% {
+    -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+  }
+  25% {
+    -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+  }
+  50% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-top: -4px;
+    margin-left: 6px;
+    width: 0px;
+    height: 0px;
+    -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px, 0 0 0 0 inset;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px, 0 0 0 0 inset;
+  }
+  51% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    margin-top: -2px;
+    margin-left: -2px;
+    width: 20px;
+    height: 20px;
+    -webkit-box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 10px inset;
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 10px inset;
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    margin-top: -2px;
+    margin-left: -2px;
+    width: 20px;
+    height: 20px;
+    -webkit-box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 0px inset;
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 0px inset;
+  }
+}
