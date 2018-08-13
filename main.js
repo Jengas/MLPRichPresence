@@ -71,11 +71,6 @@ storages.get('activity', function(error, data) {
   })
 });
 
-require('update-electron-app')({
-  repo: 'Jengas/MLPRichPresence',
-  updateInterval: '1 hour'
-})
-
 app.on('ready', function() {
   var width = 500
   var height = 600
@@ -234,9 +229,9 @@ async function setActivity() {
   var skey = checkday();
 
   if (state == "Космос") {
-    var state = "В "+state+"е"
+    var state = "В " + state + "е"
   } else {
-    var state = "Город: "+state
+    var state = "Город: " + state
   }
 
   var activity = {

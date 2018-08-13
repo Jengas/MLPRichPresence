@@ -2,3 +2,5 @@ node_modules/**
 package-lock.json
 config.json
 .DS_Store
+/EquestriaSpaceRPC-win32-x64
+/EquestriaSpaceRPC-built-installers

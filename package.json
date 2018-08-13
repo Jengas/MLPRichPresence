@@ -9,10 +9,7 @@
   "bugs": {
     "url": "https://github.com/jengas/MLPRichPresence/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jengas/MLPRichPresence.git"
-  },
+  "repository": "github:Jengas/MLPRichPresence",
   "scripts": {
     "start": "electron main.js",
     "exe": "electron-packager . --platform=win32 --arch=x64 EquestriaSpaceRPC --icon=assets/img/icon.ico --asar=true --overwrite",
@@ -30,8 +27,7 @@
     "osascript-promise": "^1.0.0",
     "parse-duration": "^0.1.1",
     "prism-media": "github:justJS/prism-media#patch-1",
-    "snekfetch": "^3.5.8",
-    "update-electron-app": "^1.3.0"
+    "snekfetch": "^3.5.8"
   },
   "browser": {
     "net": false,
