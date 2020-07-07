@@ -37,7 +37,7 @@
     "src/transports/IPC.js": false
   },
   "devDependencies": {
-    "electron": "^2.0.7",
+    "electron": "^9.1.0",
     "electron-winstaller": "^2.6.4"
   },
   "electronWinstallerConfig": {
